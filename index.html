@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ramais - AC Mais Contabilidade</title>
+    <meta name="description" content="Lista de ramais da AC Mais Contabilidade. Encontre facilmente os contatos de nossos colaboradores e setores.">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Phosphor Icons for modern icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+<body>
+    <div class="theme-toggle">
+        <button id="themeSwitch" aria-label="Alternar tema">
+            <i class="ph ph-moon" id="themeIcon"></i>
+        </button>
+    </div>
+
+    <div class="background-elements">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <div class="logo-container">
+                <img src="logo ACMAIS CCBPOE Light.png" alt="ACMais Contabilidade" id="mainLogo" class="logo">
+            </div>
+
+            <div class="welcome-text">
+                <h1>Guia de Ramais Internos</h1>
+                <p>Bem-vindo ao portal de comunicação da ACMais. Encontre rapidamente o colaborador ou setor que deseja contatar.</p>
+            </div>
+
+            <div class="main-contact glass-panel">
+                <div class="phone-info">
+                    <h2>Central de Atendimento</h2>
+                    <a href="tel:3131914100" class="phone-link">
+                        <div class="phone-number">
+                            <i class="ph ph-phone-call"></i>
+                            <span>(31) 3191-4100</span>
+                        </div>
+                    </a>
+                </div>
+                <div class="ivr-instructions">
+                    <p>Ao ligar, você ouvirá nosso menu eletrônico:</p>
+                    <ul class="ivr-list">
+                        <li><strong>1</strong> para Pessoal</li>
+                        <li><strong>2</strong> para Fiscal</li>
+                        <li><strong>3</strong> para Contábil</li>
+                        <li><strong>4</strong> para Financeiro</li>
+                    </ul>
+                    <p class="wait-msg">Ou simplesmente aguarde para ser atendido.</p>
+                </div>
+            </div>
+            
+            <div class="search-container glass-panel">
+                <i class="ph ph-magnifying-glass"></i>
+                <input type="text" id="searchInput" placeholder="Digite um nome, cargo ou ramal para filtrar...">
+            </div>
+        </header>
+
+        <div id="contentArea">
+            <!-- Content will be dynamically populated by JavaScript -->
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
