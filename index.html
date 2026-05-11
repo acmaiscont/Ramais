@@ -66,6 +66,25 @@
         </div>
     </main>
 
+    <div id="callModal" class="modal-overlay">
+        <div class="modal-content glass-panel">
+            <div class="modal-header">
+                <i class="ph ph-phone-outgoing"></i>
+                <h3>Iniciar Ligação</h3>
+            </div>
+            <div class="modal-body">
+                <p>Você será redirecionado para a nossa central.</p>
+                <div class="ramal-reminder">
+                    Ao ser atendido, digite o ramal: <strong id="modalRamal">XXXX</strong>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="cancelCall" class="btn-secondary">Cancelar</button>
+                <button id="confirmCall" class="btn-primary">Ligar Agora</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 </html>

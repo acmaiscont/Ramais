@@ -39,7 +39,7 @@ const departments = [
         ]
     },
     {
-        id: "5",
+        id: "others",
         name: "Outros Setores",
         employees: [
             { name: "RYAN OLIVEIRA", ramal: "2013", role: "TI" },
@@ -53,7 +53,7 @@ const departments = [
         name: "Diretoria",
         employees: [
             { name: "ANDREZZA MOREIRA", ramal: "2011", role: "Diretora" },
-            { name: "PATRICIA JOTA", ramal: "2025", role: "Diretora de Operações" }
+            { name: "PATRICIA JOTA", ramal: "2025", role: "Diretoria de Operações" }
         ]
     }
 ];
@@ -69,6 +69,14 @@ const searchInput = document.getElementById('searchInput');
 const themeSwitch = document.getElementById('themeSwitch');
 const themeIcon = document.getElementById('themeIcon');
 const mainLogo = document.getElementById('mainLogo');
+
+// Modal Elements
+const callModal = document.getElementById('callModal');
+const modalRamal = document.getElementById('modalRamal');
+const confirmCall = document.getElementById('confirmCall');
+const cancelCall = document.getElementById('cancelCall');
+
+const MAIN_PHONE = "3131914100";
 
 // Theme Management
 function initTheme() {
@@ -109,6 +117,28 @@ themeSwitch.addEventListener('click', () => {
     }
 });
 
+// Modal Logic
+function openModal(ramal) {
+    modalRamal.textContent = ramal;
+    callModal.classList.add('active');
+}
+
+function closeModal() {
+    callModal.classList.remove('active');
+}
+
+confirmCall.addEventListener('click', () => {
+    window.location.href = `tel:${MAIN_PHONE}`;
+    closeModal();
+});
+
+cancelCall.addEventListener('click', closeModal);
+
+// Close modal when clicking outside
+callModal.addEventListener('click', (e) => {
+    if (e.target === callModal) closeModal();
+});
+
 // Rendering Functions
 function createEmployeeCard(employee) {
     return `
@@ -117,10 +147,10 @@ function createEmployeeCard(employee) {
                 <span class="employee-name">${employee.name}</span>
                 <span class="employee-role">${employee.role}</span>
             </div>
-            <a href="tel:${employee.ramal}" class="ramal-badge" title="Clique para ligar">
+            <div class="ramal-badge" title="Clique para ligar" onclick="openModal('${employee.ramal}')" style="cursor: pointer;">
                 <i class="ph ph-phone"></i>
                 ${employee.ramal}
-            </a>
+            </div>
         </div>
     `;
 }
@@ -145,8 +175,10 @@ function renderDepartments(searchTerm = '') {
             deptSection.className = 'department-section';
             
             let numberHtml = '';
-            if (dept.id !== "*") {
+            if (!isNaN(dept.id)) {
                 numberHtml = `<div class="department-number">${dept.id}</div>`;
+            } else if (dept.id === "others") {
+                numberHtml = `<div class="department-number" style="background: var(--text-muted);"><i class="ph ph-users"></i></div>`;
             } else {
                 numberHtml = `<div class="department-number" style="background: var(--text-muted);"><i class="ph ph-briefcase"></i></div>`;
             }
