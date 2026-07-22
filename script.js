@@ -14,6 +14,7 @@ const departments = [
         name: "Fiscal",
         employees: [
             { name: "ARTHUR COSTA", ramal: "2016", role: "Setor Fiscal" },
+            { name: "AYSA OLIVEIRA", ramal: "2015", role: "Setor Fiscal" },
             { name: "CAMILA DIAS", ramal: "2019", role: "Setor Fiscal" },
             { name: "CARLOS SILVA", ramal: "2028", role: "Setor Fiscal" },
             { name: "LUCELIA COSTA", ramal: "2029", role: "Setor Fiscal" },
@@ -212,6 +213,18 @@ function renderDepartments(searchTerm = '') {
 // Search Event Listener
 searchInput.addEventListener('input', (e) => {
     renderDepartments(e.target.value);
+});
+
+// Scroll Indicator Behavior
+window.addEventListener('scroll', () => {
+    const indicator = document.getElementById('scrollIndicator');
+    if (indicator) {
+        if (window.scrollY > 40) {
+            indicator.classList.add('hidden');
+        } else {
+            indicator.classList.remove('hidden');
+        }
+    }
 });
 
 // Initialize
