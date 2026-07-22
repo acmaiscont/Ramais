@@ -32,18 +32,19 @@ const departments = [
             { name: "PRISCILA GOMES", ramal: "2012", role: "Setor Contábil" }
         ]
     },
+    /* 
     {
         id: "4",
         name: "Financeiro",
         employees: [
             { name: "LORRAYNE SANTOS", ramal: "2020", role: "Setor Financeiro" }
         ]
-    },
+    }, 
+    */
     {
         id: "others",
         name: "Outros Setores",
         employees: [
-            { name: "RYAN OLIVEIRA", ramal: "2013", role: "TI" },
             { name: "MARA RODRIGUES", ramal: "2023", role: "Conformidade e Legalização" },
             { name: "LUDHIANA SOUZA", ramal: "2030", role: "Conformidade e Legalização" },
             { name: "MARIA JOSE", ramal: "2024", role: "Comercial" }
