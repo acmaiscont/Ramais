@@ -13,7 +13,6 @@ const departments = [
         id: "2",
         name: "Fiscal",
         employees: [
-            { name: "ARTHUR COSTA", ramal: "2016", role: "Setor Fiscal" },
             { name: "AYSA OLIVEIRA", ramal: "2015", role: "Setor Fiscal" },
             { name: "CAMILA DIAS", ramal: "2019", role: "Setor Fiscal" },
             { name: "CARLOS SILVA", ramal: "2028", role: "Setor Fiscal" },
@@ -27,6 +26,7 @@ const departments = [
         name: "Contábil",
         employees: [
             { name: "ANGELICA SANTOS", ramal: "2014", role: "Setor Contábil" },
+            { name: "CARLA SANTOS", ramal: "2016", role: "Setor Contábil" },
             { name: "GRAZIELE ALVES", ramal: "2031", role: "Setor Contábil" },
             { name: "KENIA ROCHA", ramal: "2018", role: "Setor Contábil" },
             { name: "PRISCILA GOMES", ramal: "2012", role: "Setor Contábil" }
